@@ -14,7 +14,7 @@ class Crawler(Base, Selenium):
 
 	def getWorkData(self):
 
-		while len(self.array) < 100:
+		while self.page < 3:
 			self.searchYouratorWork()
 			self.searchMeetJobsWork()
 			self.search104Work()

@@ -9,6 +9,7 @@ app = Flask(__name__)
 def index():
 
 	data = []
+	post = []
 
 	if request.method == 'POST':
 
@@ -23,7 +24,7 @@ def index():
 		data = crawler.getWorkData()
 
 
-	return render_template('index.html', data=data)
+	return render_template('index.html', data=data, post=post)
 
 if __name__ == '__main__':
     app.run(debug=True)

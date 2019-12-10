@@ -4,33 +4,33 @@
     <div class="container">
         <form class="form-inline" action="" method="POST">
             <select class="form-control" name="area">
-                <option selected="selected" value="Taipei">台北市</option>
-                <option value="New Taipei">新北市</option>
-                <option value="Yilan">宜蘭縣</option>
-                <option value="Keelung">基隆市</option>
-                <option value="Taoyuan">桃園市</option>
-                <option value="Hsinchu">新竹縣市</option>
-                <option value="Miaoli">苗栗縣</option>
-                <option value="Taichung">台中市</option>
-                <option value="Changhua">彰化縣</option>
-                <option value="Nantou">南投縣</option>
-                <option value="Yunlin">雲林縣</option>
-                <option value="Chiayi">嘉義縣市</option>
-                <option value="Tainan">台南市</option>
-                <option value="Kaohsiung">高雄市</option>
-                <option value="Pingtung">屏東縣</option>
-                <option value="Taitung">台東縣</option>
-                <option value="Hualien">花蓮縣</option>
+                <option {% if post["area"] == "Taipei" %} selected="selected" {% endif %} value="Taipei">台北市</option>
+                <option {% if post["area"] == "New Taipei" %} selected="selected" {% endif %} value="New Taipei">新北市</option>
+                <option {% if post["area"] == "Yilan" %} selected="selected" {% endif %} value="Yilan">宜蘭縣</option>
+                <option {% if post["area"] == "Keelung" %} selected="selected" {% endif %} value="Keelung">基隆市</option>
+                <option {% if post["area"] == "Taoyuan" %} selected="selected" {% endif %} value="Taoyuan">桃園市</option>
+                <option {% if post["area"] == "Hsinchu" %} selected="selected" {% endif %} value="Hsinchu">新竹縣市</option>
+                <option {% if post["area"] == "Miaoli" %} selected="selected" {% endif %} value="Miaoli">苗栗縣</option>
+                <option {% if post["area"] == "Taichung" %} selected="selected" {% endif %} value="Taichung">台中市</option>
+                <option {% if post["area"] == "Changhua" %} selected="selected" {% endif %} value="Changhua">彰化縣</option>
+                <option {% if post["area"] == "Nantou" %} selected="selected" {% endif %} value="Nantou">南投縣</option>
+                <option {% if post["area"] == "Yunlin" %} selected="selected" {% endif %} value="Yunlin">雲林縣</option>
+                <option {% if post["area"] == "Chiayi" %} selected="selected" {% endif %} value="Chiayi">嘉義縣市</option>
+                <option {% if post["area"] == "Tainan" %} selected="selected" {% endif %} value="Tainan">台南市</option>
+                <option {% if post["area"] == "Kaohsiung" %} selected="selected" {% endif %} value="Kaohsiung">高雄市</option>
+                <option {% if post["area"] == "Pingtung" %} selected="selected" {% endif %} value="Pingtung">屏東縣</option>
+                <option {% if post["area"] == "Taitung" %} selected="selected" {% endif %} value="Taitung">台東縣</option>
+                <option {% if post["area"] == "Hualien" %} selected="selected" {% endif %} value="Hualien">花蓮縣</option>
             </select>
             <select class="form-control" name="salary">
-                <option value="40000">40k</option>
-                <option value="50000">50k</option>
-                <option value="60000">60k</option>
-                <option value="70000">70k</option>
-                <option value="80000">80k</option>
-                <option value="90000">90k</option>
+                <option {% if post["salary"] == "40000" %} selected="selected" {% endif %} value="40000">40k</option>
+                <option {% if post["salary"] == "50000" %} selected="selected" {% endif %} value="50000">50k</option>
+                <option {% if post["salary"] == "60000" %} selected="selected" {% endif %} value="60000">60k</option>
+                <option {% if post["salary"] == "70000" %} selected="selected" {% endif %} value="70000">70k</option>
+                <option {% if post["salary"] == "80000" %} selected="selected" {% endif %} value="80000">80k</option>
+                <option {% if post["salary"] == "90000" %} selected="selected" {% endif %} value="90000">90k</option>
             </select>
-            <input type="text" class="form-control" placeholder="請輸入關鍵字" name="keywords">
+            <input type="text" class="form-control" placeholder="請輸入關鍵字" name="keywords" value="{{ post['keywords'] }}">
             <button type="submit" class="btn btn-primary">搜尋</button>
           </form>
     </div>
