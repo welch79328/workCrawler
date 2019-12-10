@@ -2,6 +2,7 @@ import re
 import os
 import json
 import locale
+import platform
 from selenium import webdriver
 
 
@@ -34,7 +35,7 @@ class Base():
 
 	def youratorSalary(self, workSalary, searchSalary):
 
-		locale.setlocale( locale.LC_ALL, 'en_US.UTF-8') 
+		locale.setlocale( locale.LC_ALL, "en_US.UTF-8") 
 		if workSalary.find("面議") >= 0:
 			if int(searchSalary) != 40000:
 				return False
@@ -60,14 +61,15 @@ class Selenium():
 
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
+
 		self.chrome_options = webdriver.ChromeOptions()
 
-		self.chrome_options.add_argument('--headless')
-		self.chrome_options.add_argument('no-sandbox')
+		self.chrome_options.add_argument("--headless")
+		self.chrome_options.add_argument("no-sandbox")
 		
 	def getWebJson(self, url):
 
-		driver = webdriver.Chrome('drivers/chromedriver',chrome_options=self.chrome_options)
+		driver = webdriver.Chrome("drivers/"+platform.system()+"/chromedriver",chrome_options=self.chrome_options)
 
 		driver.get(url)
 
@@ -80,4 +82,4 @@ class Selenium():
 
 	def jsonFilter(self, data):
 
-		return re.sub(r'</?\w+[^>]*>', '', data)
+		return re.sub(r"</?\w+[^>]*>", "", data)
