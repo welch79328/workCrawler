@@ -66,10 +66,11 @@ class Selenium():
 
 		self.chrome_options.add_argument("--headless")
 		self.chrome_options.add_argument("no-sandbox")
+		self.driverPath = os.path.dirname(os.path.abspath(__file__))+"/drivers/"+platform.system()+"/chromedriver"
 		
 	def getWebJson(self, url):
 
-		driver = webdriver.Chrome("drivers/"+platform.system()+"/chromedriver",chrome_options=self.chrome_options)
+		driver = webdriver.Chrome(self.driverPath,chrome_options=self.chrome_options)
 
 		driver.get(url)
 
