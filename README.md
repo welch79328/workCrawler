@@ -1,4 +1,7 @@
-# 簡易工作查詢功能使用 Selenium + BeautifulSoup4 爬取104人力銀行、yourator、meet.jobs上的工作機會
+# 簡易工作查詢功能
+```
+使用 Selenium + BeautifulSoup4 爬取104人力銀行、yourator、meet.jobs上的工作機會
+```
 
 ## Getting Started
 ```
@@ -13,4 +16,10 @@ pip install -r requirements.txt
 
 ```
 python app/__init__.py
+```
+
+## Demo
+
+```
+http://3.112.190.72/
 ```
