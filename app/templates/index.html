@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="search">
+    <div class="container">
+        <form class="form-inline" action="" method="POST">
+            <select class="form-control" name="area">
+                <option selected="selected" value="Taipei">台北市</option>
+                <option value="New Taipei">新北市</option>
+                <option value="Yilan">宜蘭縣</option>
+                <option value="Keelung">基隆市</option>
+                <option value="Taoyuan">桃園市</option>
+                <option value="Hsinchu">新竹縣市</option>
+                <option value="Miaoli">苗栗縣</option>
+                <option value="Taichung">台中市</option>
+                <option value="Changhua">彰化縣</option>
+                <option value="Nantou">南投縣</option>
+                <option value="Yunlin">雲林縣</option>
+                <option value="Chiayi">嘉義縣市</option>
+                <option value="Tainan">台南市</option>
+                <option value="Kaohsiung">高雄市</option>
+                <option value="Pingtung">屏東縣</option>
+                <option value="Taitung">台東縣</option>
+                <option value="Hualien">花蓮縣</option>
+            </select>
+            <select class="form-control" name="salary">
+                <option value="40000">40k</option>
+                <option value="50000">50k</option>
+                <option value="60000">60k</option>
+                <option value="70000">70k</option>
+                <option value="80000">80k</option>
+                <option value="90000">90k</option>
+            </select>
+            <input type="text" class="form-control" placeholder="請輸入關鍵字" name="keywords">
+            <button type="submit" class="btn btn-primary">搜尋</button>
+          </form>
+    </div>
+</div>
+<div class="block container">
+	<h1 class="text-center">工作列表</h1>
+    <div class="grid">
+        {% for value in data %}
+            <div class="grid-sizer col-xs-12 col-md-6 col-lg-3"></div>
+            <div data-title="{{ value['title'] }}" class="grid-item col-xs-12 col-md-6 col-lg-3">
+                <a href="{{ value['url'] }}" target="_blank">
+                <img class="lazy" data-original="http://placehold.it/400" src="{{ value['image'] }}" alt="" /></a>
+                <div class="grid-item-content">
+                    <h3>{{ value['title'] }}</h3>
+                    <p>{{ value['company'] }}</p>
+                    <p>{{ value['salary'] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="top">top</div>
+{% endblock %}
