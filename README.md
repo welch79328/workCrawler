@@ -17,9 +17,3 @@ pip install -r requirements.txt
 ```
 python app/__init__.py
 ```
-
-## 展示
-
-```
-http://3.112.190.72/
-```
